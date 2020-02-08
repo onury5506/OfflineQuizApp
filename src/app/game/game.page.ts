@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Renderer2, NgZone } from '@angular/core';
 import { Question } from '../question/question';
 import { categoriesData } from '../data/data';
 import {HttpClient } from '@angular/common/http';
@@ -14,7 +14,8 @@ export class GamePage implements OnInit {
 
   constructor(private renderer: Renderer2
     ,private activatedRoute: ActivatedRoute
-    ,private router:Router) {}
+    ,private router:Router
+    ,private zone: NgZone) {}
 
   @ViewChild('timerBarRef', {static: false}) timerBar:ElementRef;
   @ViewChild('main', {static: false}) mainDiv:ElementRef;
@@ -85,20 +86,28 @@ export class GamePage implements OnInit {
   }
 
   timerStart(){
-    this.tmr = setInterval(()=>{
-      this.timerLeft--;
-      var color:String = this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0);
-      this.renderer.setStyle(this.timerBar.nativeElement,"background-color",color);
-      this.renderer.setStyle(this.timerBar.nativeElement,"width",(this.timerLeft/30*100)+"%");
-      if(this.timerLeft==0){
-        this.timerStop()
-        this.lock=true;
-      }
+    this.tmr = setTimeout(()=>{
+      this.zone.run(
+        ()=>{
+          this.timerLeft--;
+          //console.log(this.timerLeft+" "+(this.timerLeft/30*100)+" "+this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0))
+          var color:String = this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0);
+          this.renderer.setStyle(this.timerBar.nativeElement,"background-color",color);
+          this.renderer.setStyle(this.timerBar.nativeElement,"width",(this.timerLeft/30*100)+"%");
+          console.log(this.timerBar.nativeElement)
+          if(this.timerLeft==0){
+            this.lock=true;
+          }else{
+            this.timerStart();
+          }
+        }
+      )
+      
     },1000)
   }
 
   timerStop(){
-    clearInterval(this.tmr)
+    clearTimeout(this.tmr)
   }
 
   selectAnswer(answer){
