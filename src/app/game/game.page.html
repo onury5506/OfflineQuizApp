@@ -1,0 +1,18 @@
+<div id="main">
+
+  <div id="timer">
+    <div id="timerBar" #timerBarRef></div>
+    <div id="timerBarBorder"></div>
+    <span id="timerLeft">{{timerLeft}}</span>
+  </div>
+
+  <span id="score" class="badge badge-light">Score : {{score}}</span>
+
+  <span id="question" class="badge badge-light">{{question.question}}</span>
+  
+  <ul id="answers"class="list-group">
+    <li class="btn badge-primary " (click)="selectAnswer(answer)" *ngFor="let answer of question.answers; let i = index" [attr.data-index]="i">
+        {{answer}}
+    </li>
+  </ul>
+</div>

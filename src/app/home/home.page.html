@@ -1,14 +1,19 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>
       Ionic Blank
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
-</ion-content>
+<div id="main">
+  <h1 id="AppName">{{appName}}</h1>
+  <ul class="list-group menu">
+    <li>
+      <span class="badge badge-light ">BEST SCORE : {{getBestScore()}}</span>
+    </li>
+    <li>
+      <a routerLink="/game" class="btn badge badge-primary">PLAY QUIZ</a>
+    </li>
+  </ul>
+</div>

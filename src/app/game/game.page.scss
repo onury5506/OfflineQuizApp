@@ -1,0 +1,58 @@
+#main{
+    height: 100%;
+    background:url("/assets/homeBackGround.jpg");
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    z-index: -999;
+}
+
+#timerLeft{
+    font-size: 2.3rem;
+    color: whitesmoke;
+    position: relative;
+    z-index: 1;
+}
+
+#timerBar{
+    display: inline-block;
+    width: 100%;
+    height: 3rem;
+    background-color: rgb(0,255,0);
+    position: absolute;
+    left: 0px;
+    top:0%;
+}
+
+#timer{
+    display: inline-block;
+    width: 100%;
+    height: 3rem;
+    background-color: black;
+    
+}
+
+#score{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+#question{
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    width: 90%;
+}
+
+#answers{
+    margin-top: 2rem;
+}
+
+#answers li{
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    width: 90%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}

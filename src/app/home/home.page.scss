@@ -1,1 +1,24 @@
+#main{
+    height: 100%;
+    background:url("/assets/homeBackGround.jpg");
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+}
 
+#AppName{
+    color: whitesmoke;
+    font-weight: bold;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    font-size: 3rem;
+}
+
+.menu{
+    font-size: 2rem;
+    list-style: none;
+}
+
+.menu li{
+    margin: 1.5rem;
+}
