@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, Renderer2, NgZone } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Renderer2, ChangeDetectorRef, ApplicationRef } from '@angular/core';
 import { Question } from '../question/question';
 import { categoriesData } from '../data/data';
 import {HttpClient } from '@angular/common/http';
@@ -15,7 +15,8 @@ export class GamePage implements OnInit {
   constructor(private renderer: Renderer2
     ,private activatedRoute: ActivatedRoute
     ,private router:Router
-    ,private zone: NgZone) {}
+    ,private detector:ChangeDetectorRef
+    ,private app: ApplicationRef) {}
 
   @ViewChild('timerBarRef', {static: false}) timerBar:ElementRef;
   @ViewChild('main', {static: false}) mainDiv:ElementRef;
@@ -36,20 +37,13 @@ export class GamePage implements OnInit {
     this.activatedRoute.queryParams.subscribe(
       params => {
         if(this.router.getCurrentNavigation().extras.state){
-          this.solvedAll=false;
-          this.lock=false;
-          this.solvedNum=0;
-          this.score=0;
-          this.tmr=30;
-          this.timerStart();
           this.questions = this.router.getCurrentNavigation().extras.state.questions
           if(this.router.getCurrentNavigation().extras.state.background){
             console.log("özel background var")
             this.bg = this.router.getCurrentNavigation().extras.state.background;
-            
           }
-          console.log(this.questions.length)
           this.takeQuestion()
+          console.log(this.questions.length)
         }else{
           this.router.navigateByUrl("")
         }
@@ -69,6 +63,13 @@ export class GamePage implements OnInit {
       ,"background-size","cover")
     this.renderer.setStyle(this.mainDiv.nativeElement
       ,"background-position","center center")
+    this.solvedAll=false;
+    this.lock=false;
+    this.solvedNum=0;
+    this.score=0;
+    this.tmr=30;
+    
+    this.timerStart();
   }
 
   takeQuestion():boolean{
@@ -87,22 +88,19 @@ export class GamePage implements OnInit {
 
   timerStart(){
     this.tmr = setTimeout(()=>{
-      this.zone.run(
-        ()=>{
-          this.timerLeft--;
-          //console.log(this.timerLeft+" "+(this.timerLeft/30*100)+" "+this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0))
-          var color:String = this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0);
-          this.renderer.setStyle(this.timerBar.nativeElement,"background-color",color);
-          this.renderer.setStyle(this.timerBar.nativeElement,"width",(this.timerLeft/30*100)+"%");
-          console.log(this.timerBar.nativeElement)
-          if(this.timerLeft==0){
-            this.lock=true;
-          }else{
-            this.timerStart();
-          }
-        }
-      )
-      
+      this.timerLeft--;
+      //console.log(this.timerLeft+" "+(this.timerLeft/30*100)+" "+this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0))
+      var color:String = this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0);
+      this.renderer.setStyle(this.timerBar.nativeElement,"background-color",color);
+      this.renderer.setStyle(this.timerBar.nativeElement,"width",(this.timerLeft/30*100)+"%");
+      console.log(this.timerBar.nativeElement)
+      if(this.timerLeft==0){
+        this.lock=true;
+      }else{
+        this.timerStart();
+      }
+      //this.detector.markForCheck()
+      this.app.tick()
     },1000)
   }
 

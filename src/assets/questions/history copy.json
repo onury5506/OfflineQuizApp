@@ -1,0 +1,43 @@
+{
+    "questions":[
+        {
+            "question":"Which 3 major European countries explored and colonized the Americas?",
+            "answers":[
+                "England, France and Portugal"
+                ,"England, France and Spain"
+                ,"France, Portugal and Spain"
+                ,"England, Portugal and Spain"
+            ],
+            "rightAnswer":2
+        },
+        {
+            "question":"Why did the Spanish explore the Americas?",
+            "answers":[
+                "To find gold and riches."
+                ,"To discover more land."
+                ,"To spread Christianity."
+                ,"All of the above"
+                ,"None of the above"
+            ],
+            "rightAnswer":4
+        },
+        {
+            "question":"How did the Spanish colonies affect the Americas?",
+            "answers":[
+                "The Spanish built new buildings."
+                ,"The Spanish spread their language and religion."
+                ,"The natives were used as slaves."
+                ,"All of the above"
+            ],
+            "rightAnswer":4
+        },
+        {
+            "question":"Christopher Columbus was an Italian explorer who discovered an island in the Caribbean and accidentally found a new landmass (the Americas).",
+            "answers":[
+                "True"
+                ,"False"
+            ],
+            "rightAnswer":1
+        }
+    ]
+}
