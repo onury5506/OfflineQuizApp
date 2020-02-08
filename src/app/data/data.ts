@@ -14,7 +14,7 @@ export class categoriesData{
     read(){
         return new Promise((resolve)=>{
             var read = this.httpClient.get("/assets/questions/categories.json")
-            read.subscribe(data => {
+            read.subscribe((data:any) => {
                 resolve(data.categories)
             } )
         })
@@ -32,7 +32,7 @@ export class questionsData{
     read(jsonFile){
         return new Promise((resolve)=>{
             var read = this.httpClient.get(jsonFile)
-            read.subscribe(data => {
+            read.subscribe((data:any) => {
                 resolve(data.questions)
             } )
         })

@@ -92,6 +92,7 @@ export class GamePage implements OnInit {
       this.renderer.setStyle(this.timerBar.nativeElement,"width",(this.timerLeft/30*100)+"%");
       if(this.timerLeft==0){
         this.timerStop()
+        this.lock=true;
       }
     },1000)
   }

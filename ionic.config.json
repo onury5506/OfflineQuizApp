@@ -1,5 +1,7 @@
 {
   "name": "OfflineQuizApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
