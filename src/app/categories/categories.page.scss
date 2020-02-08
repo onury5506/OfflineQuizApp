@@ -1,0 +1,53 @@
+#main{
+    height: 100%;
+    background:url("/assets/homeBackGround.jpg");
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+}
+
+#categoriesTitle{
+    color: whitesmoke;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#categories{
+    height: 80%;
+    overflow-y: scroll;
+}
+
+#categories img{
+    height: 3rem;
+    position: relative;
+    border-radius: 50%;
+}
+
+#categories li{
+    font-size: 1.5rem;
+    width: 90%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+#categories li a{
+    text-align: left;
+    width: 100%;
+    border-radius: 0%;
+}

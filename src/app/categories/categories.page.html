@@ -1,0 +1,11 @@
+<div id="main">
+  <span id="categoriesTitle">Categories</span>
+  <ul id="categories" class="list-group menu">
+    <li *ngFor="let cat of catDatas">
+      <a routerLink="/categories" (click)="selectCategory(cat)" class="btn badge badge-primary">
+        <img src="{{cat.icon}}">
+        {{cat.categoryName}}
+      </a>
+    </li>
+  </ul>
+</div>

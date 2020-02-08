@@ -1,0 +1,14 @@
+{
+    "questions":[
+        {
+            "question":"who is bla bla",
+            "answers":["ali","veli","ayşe","fadime"],
+            "rightAnswer":3
+        },
+        {
+            "question":"who is bla bla 2",
+            "answers":["ali2","veli2","ayşe2","fadime2"],
+            "rightAnswer":2
+        }
+    ]
+}

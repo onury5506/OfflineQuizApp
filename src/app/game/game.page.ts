@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 import { Question } from '../question/question';
+import { categoriesData } from '../data/data';
+import {HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -16,19 +18,19 @@ export class GamePage implements OnInit {
   question:Question = new Question("who is bla bla ",["ali","veli","ayşe","hadime"],3)
   lock:boolean = false;
   tmr;
+
   ngOnInit() {
     this.timerStart();
-
   }
 
-  rgbToHex(r:number, g:number, b:number):String{
+  toRgbString(r:number, g:number, b:number):String{
     return "rgb("+r+","+g+","+b+")"
   }
 
   timerStart(){
     this.tmr = setInterval(()=>{
       this.timerLeft--;
-      var color:String = this.rgbToHex(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0);
+      var color:String = this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0);
       this.renderer.setStyle(this.timerBar.nativeElement,"background-color",color);
       this.renderer.setStyle(this.timerBar.nativeElement,"width",(this.timerLeft/30*100)+"%");
       if(this.timerLeft==0){
