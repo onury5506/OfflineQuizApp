@@ -1,0 +1,45 @@
+{
+    "questions":[
+        {
+            "question":"One of the essential minerals in the human body is salt. How much salt (NaCl) is in the average adult human body?",
+            "answers":[
+                "1 kilogram"
+                ,"500 grams"
+                ,"250 grams"
+                ,"50 grams"
+            ],
+            "rightAnswer":3
+        },
+        {
+            "question":"The symbol Sb stands for stibnum or stibnite. What is the modern name of this element?",
+            "answers":[
+                "Arsenic"
+                ,"Tin"
+                ,"Samarium"
+                ,"Antimony"
+                ,"Seaborgium"
+            ],
+            "rightAnswer":4
+        },
+        {
+            "question":"What is the most common isotope of hydrogen?",
+            "answers":[
+                "Protium"
+                ,"Deuterium"
+                ,"Tritum"
+                ,"Hydrogen only has one isotope!"
+            ],
+            "rightAnswer":1
+        },
+        {
+            "question":"Who is credited with the invention of the modern periodic table?",
+            "answers":[
+                "Nobel"
+                ,"Mendeleev"
+                ,"Lavoisier"
+                ,"Mendel"
+            ],
+            "rightAnswer":2
+        }
+    ]
+}

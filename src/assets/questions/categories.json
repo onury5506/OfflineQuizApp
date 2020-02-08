@@ -2,99 +2,14 @@
     "categories":[
         {
             "categoryName":"History",
-            "icon":"/assets/catIcons/history.png",
+            "icon":"/assets/catIcons/history.jpg",
             "questions":"/assets/questions/history.json",
-            "background":""
+            "background":"/assets/categoryBGs/history.jpg"
         },{
             "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
-        },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/history.png",
-            "questions":"/assets/questions/history.json",
-            "background":""
+            "icon":"/assets/catIcons/chemistry.png",
+            "questions":"/assets/questions/chemistry.json",
+            "background":"/assets/categoryBGs/chemistry.jpg"
         }
     ]
 }

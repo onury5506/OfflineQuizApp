@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/co
 import { Question } from '../question/question';
 import { categoriesData } from '../data/data';
 import {HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -11,16 +12,72 @@ import {HttpClient } from '@angular/common/http';
 })
 export class GamePage implements OnInit {
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2
+    ,private activatedRoute: ActivatedRoute
+    ,private router:Router) {}
+
   @ViewChild('timerBarRef', {static: false}) timerBar:ElementRef;
+  @ViewChild('main', {static: false}) mainDiv:ElementRef;
   timerLeft:number = 30;
-  score:number = 100;
-  question:Question = new Question("who is bla bla ",["ali","veli","ayşe","hadime"],3)
+  score:number;
+  questions;
+  question
   lock:boolean = false;
   tmr;
+  solvedAll = false;
+  solvedNum:number;
+  bg;
+
+
+  
 
   ngOnInit() {
-    this.timerStart();
+    this.activatedRoute.queryParams.subscribe(
+      params => {
+        if(this.router.getCurrentNavigation().extras.state){
+          this.solvedAll=false;
+          this.lock=false;
+          this.solvedNum=0;
+          this.score=0;
+          this.tmr=30;
+          this.timerStart();
+          this.questions = this.router.getCurrentNavigation().extras.state.questions
+          if(this.router.getCurrentNavigation().extras.state.background){
+            console.log("özel background var")
+            this.bg = this.router.getCurrentNavigation().extras.state.background;
+            
+          }
+          console.log(this.questions.length)
+          this.takeQuestion()
+        }else{
+          this.router.navigateByUrl("")
+        }
+      }
+    )
+  }
+
+  ngAfterViewInit() {
+    if(this.bg != "none"){
+      this.renderer.setStyle(this.mainDiv.nativeElement
+        ,"background","url('"+this.bg+"')")
+    }else{
+      this.renderer.setStyle(this.mainDiv.nativeElement
+        ,"background","/assets/homeBackGround.jpg")
+    }
+    this.renderer.setStyle(this.mainDiv.nativeElement
+      ,"background-size","cover")
+    this.renderer.setStyle(this.mainDiv.nativeElement
+      ,"background-position","center center")
+  }
+
+  takeQuestion():boolean{
+    if(this.questions.length > 0){
+      var q = Math.floor(Math.random()*this.questions.length)
+      this.question = this.questions[q]
+      this.questions.splice(q,1)
+      return true;
+    }
+    return false;
   }
 
   toRgbString(r:number, g:number, b:number):String{
@@ -48,6 +105,7 @@ export class GamePage implements OnInit {
       console.log(answer)
       if(answer === this.question.answers[this.question.rightAnswer-1]){
         console.log("DOĞRU CEVAP")
+        this.solvedNum++;
         this.score += this.timerLeft;
         
         this.renderer.setStyle(this.timerBar.nativeElement,"width",100+"%");
@@ -55,6 +113,14 @@ export class GamePage implements OnInit {
         this.timerStop();
         this.timerLeft = 30;
         this.timerStart();
+
+        if(!this.takeQuestion()){
+          console.log("Sorular bitti")
+          this.timerStop();
+          this.solvedAll=true;
+          this.score += this.solvedNum*10;
+          this.lock=true;
+        }
       }else{
         console.log("YANLIŞ CEVAP")
         this.timerStop();

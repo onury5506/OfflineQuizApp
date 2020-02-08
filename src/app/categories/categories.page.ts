@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { categoriesData,questionsData } from '../data/data';
+import { NavController } from '@ionic/angular';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -8,14 +10,22 @@ import { categoriesData,questionsData } from '../data/data';
 })
 export class CategoriesPage implements OnInit {
   catDatas;
-  constructor(catDatas:categoriesData,private questions:questionsData) {
+  constructor(catDatas:categoriesData
+    ,private questions:questionsData
+    ,private router:Router) {
     catDatas.read().then((val)=>this.catDatas=val)
     
   }
 
   selectCategory(category){
     this.questions.read(category.questions).then((val)=>{
-      
+      var navExt:NavigationExtras = {
+        state:{
+          questions:val,
+          background:category.background
+        }
+      }
+      this.router.navigate(["game"],navExt)
     })
   }
 
