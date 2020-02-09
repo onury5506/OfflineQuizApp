@@ -5,16 +5,19 @@
       <div id="timerBarBorder"></div>
       <span id="timerLeft">{{timerLeft}}</span>
     </div>
-  
-    <span id="score" class="badge badge-light">Score : {{score}}</span>
-  
-    <p id="question" class="badge badge-light">{{question.question}}</p>
+    <div *ngIf="score>=0">
+      <span id="score" class="badge badge-light" >Score : {{score}}</span>
     
-    <ul id="answers"class="list-group">
-      <li class="btn badge-primary " (click)="selectAnswer(answer)" *ngFor="let answer of question.answers; let i = index" [attr.data-index]="i">
-          {{answer}}
-      </li>
-    </ul>
+      <p id="question" class="badge badge-light">{{question.question}}</p>
+      
+      <ul id="answers"class="list-group">
+        <li class="btn badge-primary " (click)="selectAnswer(answer)" *ngFor="let answer of question.answers; let i = index" [attr.data-index]="i">
+            {{answer}}
+        </li>
+      </ul>
+    </div>
+    <span id="score" class="badge badge-light" *ngIf="score<0">READY!</span>
+    
   </div>
 
   <div id="endScreen" *ngIf="lock">

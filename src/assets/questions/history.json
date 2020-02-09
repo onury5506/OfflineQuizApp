@@ -1,40 +1,35 @@
 {
     "questions":[
         {
-            "question":"Christopher Columbus was an Italian explorer who discovered an island in the Caribbean and accidentally found a new landmass (the Americas).",
+            "question":"Which 3 major European countries explored and colonized the Americas?",
             "answers":[
-                "True"
-                ,"False"
+                "England, France and Portugal"
+                ,"England, France and Spain"
+                ,"France, Portugal and Spain"
+                ,"England, Portugal and Spain"
             ],
-            "rightAnswer":1
+            "rightAnswer":2
         },
         {
-            "question":"Christopher Columbus was an Italian explorer who discovered an island in the Caribbean and accidentally found a new landmass (the Americas).",
+            "question":"Why did the Spanish explore the Americas?",
             "answers":[
-                "True"
-                ,"False"
-                ,"False"
-                ,"False"
+                "To find gold and riches."
+                ,"To discover more land."
+                ,"To spread Christianity."
+                ,"All of the above"
+                ,"None of the above"
             ],
-            "rightAnswer":1
+            "rightAnswer":4
         },
         {
-            "question":"Christopher Columbus was an Italian explorer who discovered an island in the Caribbean and accidentally found a new landmass (the Americas).",
+            "question":"How did the Spanish colonies affect the Americas?",
             "answers":[
-                "True"
-                ,"False"
-                ,"False"
-                ,"False"
+                "The Spanish built new buildings."
+                ,"The Spanish spread their language and religion."
+                ,"The natives were used as slaves."
+                ,"All of the above"
             ],
-            "rightAnswer":1
-        },
-        {
-            "question":"Christopher Columbus was an Italian explorer who discovered an island in the Caribbean and accidentally found a new landmass (the Americas).",
-            "answers":[
-                "True"
-                ,"False"
-            ],
-            "rightAnswer":1
+            "rightAnswer":4
         },
         {
             "question":"Christopher Columbus was an Italian explorer who discovered an island in the Caribbean and accidentally found a new landmass (the Americas).",

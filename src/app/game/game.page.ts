@@ -21,7 +21,7 @@ export class GamePage implements OnInit {
   @ViewChild('timerBarRef', {static: false}) timerBar:ElementRef;
   @ViewChild('main', {static: false}) mainDiv:ElementRef;
   timerLeft:number = 30;
-  score:number;
+  score:number=-1;
   questions;
   question
   lock:boolean = false;
@@ -43,6 +43,7 @@ export class GamePage implements OnInit {
             this.bg = this.router.getCurrentNavigation().extras.state.background;
           }
           this.takeQuestion()
+          
           console.log(this.questions.length)
         }else{
           this.router.navigateByUrl("")
@@ -63,13 +64,16 @@ export class GamePage implements OnInit {
       ,"background-size","cover")
     this.renderer.setStyle(this.mainDiv.nativeElement
       ,"background-position","center center")
-    this.solvedAll=false;
-    this.lock=false;
-    this.solvedNum=0;
-    this.score=0;
-    this.tmr=30;
-    
-    this.timerStart();
+      setTimeout(()=>{
+        this.tmr=30;
+        this.solvedAll=false;
+        this.lock=false;
+        this.solvedNum=0;
+        this.score=0;
+        this.renderer.setStyle(this.timerBar.nativeElement,"width",100+"%");
+        this.renderer.setStyle(this.timerBar.nativeElement,"background-color","rgb(0,255,0)");
+        this.timerStart()
+      },3000)
   }
 
   takeQuestion():boolean{
