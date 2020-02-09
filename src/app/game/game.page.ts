@@ -37,14 +37,22 @@ export class GamePage implements OnInit {
     this.activatedRoute.queryParams.subscribe(
       params => {
         if(this.router.getCurrentNavigation().extras.state){
-          this.questions = this.router.getCurrentNavigation().extras.state.questions
-          if(this.router.getCurrentNavigation().extras.state.background){
-            console.log("özel background var")
-            this.bg = this.router.getCurrentNavigation().extras.state.background;
-          }
-          this.takeQuestion()
           
-          console.log(this.questions.length)
+          this.questions = this.router.getCurrentNavigation().extras.state.questions
+          this.bg = this.router.getCurrentNavigation().extras.state.background;
+          this.takeQuestion()
+          this.timerLeft=30;
+          this.solvedAll=false;
+          this.lock=false;
+          this.solvedNum=0;
+          this.score=-1;
+          setTimeout(()=>{
+            this.score=0;
+            this.renderer.setStyle(this.timerBar.nativeElement,"width",100+"%");
+            this.renderer.setStyle(this.timerBar.nativeElement,"background-color","rgb(0,255,0)");
+            this.timerStart()
+          },1500)
+          this.setBackground()
         }else{
           this.router.navigateByUrl("")
         }
@@ -53,27 +61,23 @@ export class GamePage implements OnInit {
   }
 
   ngAfterViewInit() {
-    if(this.bg != "none"){
+    this.setBackground()
+  }
+
+  setBackground(){
+    if(this.mainDiv){
+      if(this.bg){
+        this.renderer.setStyle(this.mainDiv.nativeElement
+          ,"background","url('"+this.bg+"')")
+      }else{
+        this.renderer.setStyle(this.mainDiv.nativeElement
+          ,"background","url('/assets/homeBackGround.jpg')")
+      }
       this.renderer.setStyle(this.mainDiv.nativeElement
-        ,"background","url('"+this.bg+"')")
-    }else{
+        ,"background-size","cover")
       this.renderer.setStyle(this.mainDiv.nativeElement
-        ,"background","/assets/homeBackGround.jpg")
+        ,"background-position","center center")
     }
-    this.renderer.setStyle(this.mainDiv.nativeElement
-      ,"background-size","cover")
-    this.renderer.setStyle(this.mainDiv.nativeElement
-      ,"background-position","center center")
-      setTimeout(()=>{
-        this.tmr=30;
-        this.solvedAll=false;
-        this.lock=false;
-        this.solvedNum=0;
-        this.score=0;
-        this.renderer.setStyle(this.timerBar.nativeElement,"width",100+"%");
-        this.renderer.setStyle(this.timerBar.nativeElement,"background-color","rgb(0,255,0)");
-        this.timerStart()
-      },3000)
   }
 
   takeQuestion():boolean{
@@ -93,18 +97,16 @@ export class GamePage implements OnInit {
   timerStart(){
     this.tmr = setTimeout(()=>{
       this.timerLeft--;
-      //console.log(this.timerLeft+" "+(this.timerLeft/30*100)+" "+this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0))
+      
       var color:String = this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0);
       this.renderer.setStyle(this.timerBar.nativeElement,"background-color",color);
       this.renderer.setStyle(this.timerBar.nativeElement,"width",(this.timerLeft/30*100)+"%");
-      console.log(this.timerBar.nativeElement)
+      
       if(this.timerLeft==0){
         this.lock=true;
       }else{
         this.timerStart();
       }
-      //this.detector.markForCheck()
-      this.app.tick()
     },1000)
   }
 
@@ -114,9 +116,9 @@ export class GamePage implements OnInit {
 
   selectAnswer(answer){
     if(!this.lock){
-      console.log(answer)
+      
       if(answer === this.question.answers[this.question.rightAnswer-1]){
-        console.log("DOĞRU CEVAP")
+        
         this.solvedNum++;
         this.score += this.timerLeft;
         
@@ -127,14 +129,13 @@ export class GamePage implements OnInit {
         this.timerStart();
 
         if(!this.takeQuestion()){
-          console.log("Sorular bitti")
+          
           this.timerStop();
           this.solvedAll=true;
           this.score += this.solvedNum*10;
           this.lock=true;
         }
       }else{
-        console.log("YANLIŞ CEVAP")
         this.timerStop();
         this.lock=true;
       }
