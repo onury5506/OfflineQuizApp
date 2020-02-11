@@ -115,7 +115,7 @@ export class GamePage implements OnInit {
   }
 
   selectAnswer(answer){
-    if(!this.lock){
+    if(!this.lock && this.score >= 0){
       
       if(answer === this.question.answers[this.question.rightAnswer-1]){
         
