@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { Admob } from '../admob/admob';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,10 @@ import { AppComponent } from '../app.component';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor() { }
+  constructor(private admob:Admob) { }
 
   ngOnInit() {
+    this.admob.showBanner()
   }
 
   appName:String = "QUIZ APP";
