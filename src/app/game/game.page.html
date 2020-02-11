@@ -1,34 +1,32 @@
 <div id="main" #main>
   <div *ngIf="!lock">
-    <div id="timer">
-      <div id="timerBar" #timerBarRef></div>
-      <div id="timerBarBorder"></div>
-      <span id="timerLeft">{{timerLeft}}</span>
-    </div>
-    <div *ngIf="score>=0">
-      <span id="score" class="badge badge-light" >Score : {{score}}</span>
     
-      <p id="question" class="badge badge-light">{{question.question}}</p>
+      <div id="timer">
+        <div id="timerBar" #timerBarRef></div>
+        <div id="timerBarBorder"></div>
+      </div>
+      <span class="score badge badge-light font" *ngIf="score>=0">Score : {{score}}</span>
+      <span class="score badge badge-light font" *ngIf="score<0">READY!</span>
+      <p id="question" class="badge badge-light font">{{question.question}}</p>
       
       <ul id="answers"class="list-group">
-        <li class="btn badge-primary " (click)="selectAnswer(answer)" *ngFor="let answer of question.answers; let i = index" [attr.data-index]="i">
+        <li class="btn badge-primary font" (click)="selectAnswer(answer)" *ngFor="let answer of question.answers; let i = index" [attr.data-index]="i">
             {{answer}}
         </li>
       </ul>
-    </div>
-    <span id="score" class="badge badge-light" *ngIf="score<0">READY!</span>
+    
     
   </div>
 
   <div id="endScreen" *ngIf="lock">
     <ul class="list-group menu">
-      <li class="badge badge-light" *ngIf="solvedAll">
+      <li class="badge badge-light font" *ngIf="solvedAll">
         YOU SOLVED <br> ALL THE QUESTIONS!
       </li>
-      <li class="badge badge-light">
+      <li class="score badge badge-light font">
         Score : {{score}}
       </li>
-      <li routerLink="/categories" class="btn badge badge-primary">
+      <li routerLink="/categories" class="btn badge badge-primary font">
         PLAY AGAIN
       </li>
     </ul>
