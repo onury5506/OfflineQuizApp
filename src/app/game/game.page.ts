@@ -3,6 +3,7 @@ import { Question } from '../question/question';
 import { categoriesData } from '../data/data';
 import {HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Admob } from '../admob/admob';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class GamePage implements OnInit {
     ,private activatedRoute: ActivatedRoute
     ,private router:Router
     ,private detector:ChangeDetectorRef
-    ,private app: ApplicationRef) {}
+    ,private app: ApplicationRef
+    ,private admob:Admob) {}
 
   @ViewChild('timerBarRef', {static: false}) timerBar:ElementRef;
   @ViewChild('main', {static: false}) mainDiv:ElementRef;
@@ -53,6 +55,7 @@ export class GamePage implements OnInit {
             this.timerStart()
           },1500)
           this.setBackground()
+          this.admob.prepareInterstitial()
         }else{
           this.router.navigateByUrl("")
         }
@@ -62,6 +65,7 @@ export class GamePage implements OnInit {
 
   ngAfterViewInit() {
     this.setBackground()
+    this.admob.prepareInterstitial()
   }
 
   setBackground(){
@@ -97,14 +101,13 @@ export class GamePage implements OnInit {
   timerStart(){
     this.tmr = setTimeout(()=>{
       this.timerLeft--;
-      
       var color:String = this.toRgbString(255*(30-this.timerLeft)/30,255*(this.timerLeft/30),0);
       this.renderer.setStyle(this.timerBar.nativeElement,"background-color",color);
       this.renderer.setStyle(this.timerBar.nativeElement,"width",(this.timerLeft/30*100)+"%");
       
       if(this.timerLeft==0){
         this.lock=true;
-      }else{
+      }else if(!this.lock){
         this.timerStart();
       }
     },1000)
@@ -112,6 +115,22 @@ export class GamePage implements OnInit {
 
   timerStop(){
     clearTimeout(this.tmr)
+  }
+
+  plusHealth(){
+    if(this.admob.rewardedReady()){
+      this.admob.showRewarded()
+      this.admob.setRewardedVideoReward(()=>{
+        this.lock=false;
+        this.timerLeft = 30;
+      })
+      this.admob.afterCloseRewarded(()=>{
+        if(!this.lock)
+          this.timerStart();
+      })
+    }
+    
+    
   }
 
   selectAnswer(answer){

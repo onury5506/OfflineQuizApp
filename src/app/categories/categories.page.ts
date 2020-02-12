@@ -32,11 +32,8 @@ export class CategoriesPage implements OnInit {
       if(this.admob.interstitialReady()){
         this.admob.showInterstitial()
         
-        this.admob.admobFree
-        .on(this.admob.admobFree.events.INTERSTITIAL_CLOSE)
-        .subscribe(()=>{
+        this.admob.afterCloseInterstitial(()=>{
           this.router.navigate(["game"],this.navExt)
-          this.admob.prepareInterstitial()
         });
       }else{
         this.router.navigate(["game"],this.navExt)
@@ -47,7 +44,6 @@ export class CategoriesPage implements OnInit {
   }
 
   ngOnInit() {
-    this.admob.prepareInterstitial()
   }
 
 }

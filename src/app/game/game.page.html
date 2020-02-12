@@ -26,6 +26,9 @@
       <li class="score badge badge-light font">
         Score : {{score}}
       </li>
+      <li *ngIf="admob.rewardedReady() && !solvedAll" (click)="plusHealth()" class="btn badge badge-primary font">
+        +1
+      </li>
       <li routerLink="/categories" class="btn badge badge-primary font">
         PLAY AGAIN
       </li>

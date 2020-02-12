@@ -1,6 +1,7 @@
 import { Platform } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free/ngx';
+import { Subscription } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -10,6 +11,7 @@ export class Admob{
     admobId;
     test:boolean=true;
     private static intReady:number=0;//0 not read-1 loading-2 ready
+    private static rewReady:number=0;//0 not read-1 loading-2 ready
 
     constructor(private platfrom:Platform
         ,public admobFree:AdMobFree
@@ -17,7 +19,8 @@ export class Admob{
         if(this.platfrom.is("android")){
             this.admobId={
                 banner: 'ca-app-pub-3940256099942544/6300978111',
-                interstitial: 'ca-app-pub-3940256099942544/1033173712'
+                interstitial: 'ca-app-pub-3940256099942544/1033173712',
+                rewarded: 'ca-app-pub-3940256099942544/5224354917'
             }
         }else if(this.platfrom.is("ios")){
             this.admobId={
@@ -25,6 +28,14 @@ export class Admob{
                 interstitial: 'test'
             }
         }
+        this.prepareInterstitial()
+        this.prepareRewarded()
+        this.admobFree.on(this.admobFree.events.REWARD_VIDEO_CLOSE)
+        .subscribe(()=>{
+            this.prepareRewarded()
+        })
+        this.admobFree.on(this.admobFree.events.INTERSTITIAL_CLOSE)
+            .subscribe(this.prepareInterstitial)
     }
 
     showBanner(){
@@ -63,14 +74,72 @@ export class Admob{
     }
 
     showInterstitial(){
-        if(Admob.intReady == 2){
+        if(this.interstitialReady()){
             Admob.intReady = 0;
             this.admobFree.interstitial.show()
-            //console.log("gösterildi")
+        }
+    }
+    
+
+    afterCloseInterstitial(func){
+        if(this.admobId){
+            var subs:Subscription = this.admobFree.on(this.admobFree.events.INTERSTITIAL_CLOSE)
+            .subscribe(()=>{
+                func()
+                subs.unsubscribe()
+            })
         }
     }
 
     interstitialReady():boolean{
         return Admob.intReady==2
+    }
+
+    prepareRewarded(){
+        if(this.admobId && Admob.rewReady == 0){
+            this.admobFree.rewardVideo.config({
+                id:this.admobId.rewarded,
+                isTesting:this.test,
+                autoShow:false
+            })
+            //console.log("id : "+this.admobId.rewarded)
+            Admob.rewReady = 1;
+            console.log("rewarded hazirlaniyor")
+            
+            
+            this.admobFree.rewardVideo.prepare().then(()=>{
+                Admob.rewReady = 2;
+                console.log("rewarded hazir")
+            }).catch((err)=>{
+                console.log(err)
+            })
+        }
+    }
+
+    showRewarded(){
+        if(this.rewardedReady()){
+            Admob.rewReady=0;
+            this.admobFree.rewardVideo.show()
+        }
+    }
+
+    setRewardedVideoReward(func){
+        var subs:Subscription = this.admobFree.on(this.admobFree.events.REWARD_VIDEO_REWARD)
+        .subscribe(()=>{
+            func()
+            subs.unsubscribe()
+        })
+    }
+
+    afterCloseRewarded(func){
+        var subs:Subscription = this.admobFree.on(this.admobFree.events.REWARD_VIDEO_CLOSE)
+        .subscribe(()=>{
+            func()
+            subs.unsubscribe()
+        })
+    }
+
+    rewardedReady():boolean{
+        return Admob.rewReady==2
     }
 }
