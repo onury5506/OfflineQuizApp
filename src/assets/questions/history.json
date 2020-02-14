@@ -38,6 +38,17 @@
                 ,"False"
             ],
             "rightAnswer":1
+        },
+        {
+            "question":"World War I began in which year?",
+            "answers":[
+                "1914"
+                ,"1917"
+                ,"1912"
+                ,"1921"
+            ],
+            "rightAnswer":1,
+            "pic":"assets/pics/ww1.png"
         }
     ]
 }
