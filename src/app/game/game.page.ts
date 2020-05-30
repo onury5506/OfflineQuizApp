@@ -18,7 +18,7 @@ export class GamePage implements OnInit {
     ,private router:Router
     ,private detector:ChangeDetectorRef
     ,private app: ApplicationRef
-    ,private admob:Admob) {}
+    ,public admob:Admob) {}
 
   @ViewChild('timerBarRef', {static: false}) timerBar:ElementRef;
   @ViewChild('main', {static: false}) mainDiv:ElementRef;

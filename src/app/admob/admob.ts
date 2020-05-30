@@ -18,9 +18,9 @@ export class Admob{
         ){
         if(this.platfrom.is("android")){
             this.admobId={
-                banner: 'ca-app-pub-3940256099942544/6300978111',
-                interstitial: 'ca-app-pub-3940256099942544/1033173712',
-                rewarded: 'ca-app-pub-3940256099942544/5224354917'
+                banner: 'ca-app-pub-1015902786782911/2509005190',
+                interstitial: 'ca-app-pub-1015902786782911/2317433500',
+                rewarded: 'ca-app-pub-1015902786782911/1766575644'
             }
         }else if(this.platfrom.is("ios")){
             this.admobId={
@@ -66,6 +66,7 @@ export class Admob{
             this.admobFree.interstitial.prepare().then(()=>{
                 Admob.intReady = 2;
             }).catch((err)=>{
+                console.log("err")
                 console.log(err)
             })
             //this.admobFree.on(this.admobFree.events.INTERSTITIAL_LOAD).subscribe((d)=>console.log("INTERSTITIAL_LOAD :",d))

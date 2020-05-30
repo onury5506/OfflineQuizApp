@@ -1,0 +1,63 @@
+{
+    "questions":[
+        {
+            "question":"Dünyada en çok satış yapmış oyun hangisidir?",
+            "answers":[
+                "Tetris"
+                ,"Pac-Man"
+                ,"Super Mario Bros"
+                ,"Pokemon Red and Blue"
+            ],
+            "rightAnswer":1
+        },{
+            "question":"Pac-Man oyununda kaç tane hayalet vardır?",
+            "answers":[
+                "3"
+                ,"4"
+                ,"5"
+                ,"6"
+            ],
+            "rightAnswer":2
+        },{
+            "question":"Mortal Kombat oyunu kaç yılında piyasaya sürülmüştür?",
+            "answers":[
+                "1990"
+                ,"1991"
+                ,"1992"
+                ,"1993"
+            ],
+            "rightAnswer":3,
+            "pic":"assets/pics/MK.png"
+        },{
+            "question":"ToeJam & Earl oyununda karakterlerimiz Dünya'ya nasıl gelmişlerdir?",
+            "answers":[
+                "Yanlış uzay gemisine binmişlerdir."
+                ,"Yanlışıkla Dünya'ya ışınlanmışlardır."
+                ,"Dünya'yı başka gezegenle karıştırmışlardır."
+                ,"Uzay gemileri Dünya'ya çarpmıştır."
+            ],
+            "rightAnswer":4,
+            "pic":"assets/pics/toejam.jpg"
+        },{
+            "question":"Snow Bros oyununda her kaç bölümde bir boss gelir?",
+            "answers":[
+                "10"
+                ,"9"
+                ,"7"
+                ,"5"
+            ],
+            "rightAnswer":1,
+            "pic":"assets/pics/snowbros.png"
+        },{
+            "question":"Street Fighter II'de kaç tane oynanabilir karakter vardır?",
+            "answers":[
+                "10"
+                ,"12"
+                ,"14"
+                ,"16"
+            ],
+            "rightAnswer":2,
+            "pic":"assets/pics/Sf2.png"
+        }
+    ]
+}

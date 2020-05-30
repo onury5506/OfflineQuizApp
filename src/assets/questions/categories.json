@@ -1,15 +1,15 @@
 {
     "categories":[
         {
-            "categoryName":"History",
-            "icon":"/assets/catIcons/history.jpg",
-            "questions":"/assets/questions/history.json",
-            "background":"/assets/categoryBGs/history.jpg"
+            "categoryName":"League Of Legends",
+            "icon":"/assets/catIcons/lol.png",
+            "questions":"/assets/questions/lol.json",
+            "background":"/assets/categoryBGs/lol.jpg"
         },{
-            "categoryName":"Chemistry",
-            "icon":"/assets/catIcons/chemistry.png",
-            "questions":"/assets/questions/chemistry.json",
-            "background":"/assets/categoryBGs/chemistry.jpg"
+            "categoryName":"Nostalji Oyunlar",
+            "icon":"/assets/catIcons/oyunTarihi.png",
+            "questions":"/assets/questions/oyunTarihi.json",
+            "background":"/assets/categoryBGs/oyunTarihi.jpg"
         }
     ]
 }

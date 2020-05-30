@@ -78,7 +78,7 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-admob-free": {
-        "ADMOB_APP_ID": "<ANDROID_ADMOB_APP_ID>"
+        "ADMOB_APP_ID": "ca-app-pub-1015902786782911~8611379111"
       }
     },
     "platforms": [
