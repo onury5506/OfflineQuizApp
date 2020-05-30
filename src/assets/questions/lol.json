@@ -1,196 +1,204 @@
 {
     "questions":[
-        {
-            "question":"'YILDIZLARIN HAKİMİ' lakabı hangi şampiyona aittir?",
-            "answers":[
-                "Bard"
-                ,"Aurelion Sol"
-                ,"Kennen"
-                ,"Taric"
-            ],
-            "rightAnswer":2,
-            "pic":"assets/pics/questionMark.jpg"
-        },{
-            "question":"'KIYAMET HABERCİSİ' lakabı hangi şampiyona aittir?",
-            "answers":[
-                "Karthus"
-                ,"Evelynn"
-                ,"Kalista"
-                ,"Fiddlesticks"
-            ],
-            "rightAnswer":4,
-            "pic":"assets/pics/questionMark.jpg"
-        },{
-            "question":"'HİÇLİK'İN HABERCİSİ' lakabı hangi şampiyona aittir?",
-            "answers":[
-                "Malzahar"
-                ,"Kayn"
-                ,"Kindred"
-                ,"Lissandra"
-            ],
-            "rightAnswer":1,
-            "pic":"assets/pics/questionMark.jpg"
-        },{
-            "question":"'DELİ BOZUK SÜVARİ' lakabı hangi şampiyona aittir?",
-            "answers":[
-                "Hecarim"
-                ,"Rumble"
-                ,"Kled"
-                ,"Sejuani"
-            ],
-            "rightAnswer":3,
-            "pic":"assets/pics/questionMark.jpg"
-        },{
-            "question":"'ÖDÜL AVCISI' lakabı hangi şampiyona aittir?",
-            "answers":[
-                "Miss Fortune"
-                ,"Master Yi"
-                ,"Lucian"
-                ,"Kled"
-            ],
-            "rightAnswer":1,
-            "pic":"assets/pics/questionMark.jpg"
-        },{
-            "question":"HEIMERDINGER hangi bölgedendir?",
-            "answers":[
-                "BILGEWATER"
-                ,"PILTOVER"
-                ,"RUNETERRA"
-                ,"BANDLE ŞEHRİ"
-            ],
-            "rightAnswer":2,
-            "pic":"assets/pics/heim.jpg"
-        },{
-            "question":"MISS FORTUNE hangi bölgedendir?",
-            "answers":[
-                "PILTOVER"
-                ,"RUNETERRA"
-                ,"BILGEWATER"
-                ,"BANDLE ŞEHRİ"
-            ],
-            "rightAnswer":3,
-            "pic":"assets/pics/mf.jpg"
-        },{
-            "question":"'Işığın Sesi' adlı yetenek hangi şampiyona aittir?",
-            "answers":[
-                "Sona"
-                ,"Lux"
-                ,"Bard"
-                ,"Aurelion Sol"
-            ],
-            "rightAnswer":4
-        },{
-            "question":"'Biçen Balta' adlı yetenek hangi şampiyona aittir?",
-            "answers":[
-                "Darius"
-                ,"Dr. Mundo"
-                ,"Olaf"
-                ,"Tryndamere"
-            ],
-            "rightAnswer":1
-        },{
-            "question":"'Zayıflara Acıma' adlı yetenek hangi şampiyona aittir?",
-            "answers":[
-                "Thresh"
-                ,"Syndra"
-                ,"Urgot"
-                ,"Warwick"
-            ],
-            "rightAnswer":2
-        },{
-            "question":"'Çelik Fırtına' adlı yetenek hangi şampiyona aittir?",
-            "answers":[
-                "Master Yi"
-                ,"Shen"
-                ,"Yasuo"
-                ,"Sejuani"
-            ],
-            "rightAnswer":3
-        },{
-            "question":"'Kırık Kanatlar' adlı yetenek hangi şampiyona aittir?",
-            "answers":[
-                "Kayle"
-                ,"Morgana"
-                ,"Quinn"
-                ,"Riven"
-            ],
-            "rightAnswer":4
-        },{
-            "question":"'Cızzt!' adlı yetenek hangi şampiyona aittir?",
-            "answers":[
-                "Jinx"
-                ,"Kennen"
-                ,"Corki"
-                ,"Fizz"
-            ],
-            "rightAnswer":1
-        },{
-            "question":"Hangi şampiyonun 'Vahşi Batılı' kostümü YOKTUR?",
-            "answers":[
-                "Yasuo"
-                ,"Miss Fortune"
-                ,"Thresh"
-                ,"Sejuani"
-            ],
-            "rightAnswer":2
-        },{
-            "question":"Hangi şampiyonun 'Yıldız Muhafızı' kostümü YOKTUR?",
-            "answers":[
-                "Ahri"
-                ,"Lulu"
-                ,"Sona"
-                ,"Janna"
-            ],
-            "rightAnswer":3
-        },{
-            "question":"Hangi şampiyonun 'Kanlı Ay' kostümü YOKTUR?",
-            "answers":[
-                "Talon"
-                ,"Shen"
-                ,"Diana"
-                ,"Kassadin"
-            ],
-            "rightAnswer":4
-        },{
-            "question":"Görseldeki yetenek hangi şampiyona aittir?",
-            "answers":[
-                "Annie"
-                ,"Lulu"
-                ,"Nunu ve Willump"
-                ,"Mordekaiser"
-            ],
-            "rightAnswer":1,
-            "pic":"assets/pics/tibbers.png"
-        },{
-            "question":"Görseldeki yetenek hangi şampiyona aittir?",
-            "answers":[
-                "Hecarim"
-                ,"Ekko"
-                ,"Nidalee"
-                ,"Pyke"
-            ],
-            "rightAnswer":2,
-            "pic":"assets/pics/zamanSicramasi.png"
-        },{
-            "question":"Görseldeki yetenek hangi şampiyona aittir?",
-            "answers":[
-                "Vi"
-                ,"Volibear"
-                ,"Blitzcrank"
-                ,"Malphite"
-            ],
-            "rightAnswer":3,
-            "pic":"assets/pics/gucYumrugu.png"
-        },{
-            "question":"Görseldeki yetenek hangi şampiyona aittir?",
-            "answers":[
-                "Jhin"
-                ,"Lucian"
-                ,"Viktor"
-                ,"Caitlyn"
-            ],
-            "rightAnswer":4,
-            "pic":"assets/pics/sonKoz.png"
-        }
+        [
+            {
+                "question":"'YILDIZLARIN HAKİMİ' lakabı hangi şampiyona aittir?",
+                "answers":[
+                    "Bard"
+                    ,"Aurelion Sol"
+                    ,"Kennen"
+                    ,"Taric"
+                ],
+                "rightAnswer":2,
+                "pic":"assets/pics/questionMark.jpg"
+            },{
+                "question":"'KIYAMET HABERCİSİ' lakabı hangi şampiyona aittir?",
+                "answers":[
+                    "Karthus"
+                    ,"Evelynn"
+                    ,"Kalista"
+                    ,"Fiddlesticks"
+                ],
+                "rightAnswer":4,
+                "pic":"assets/pics/questionMark.jpg"
+            },{
+                "question":"'HİÇLİK'İN HABERCİSİ' lakabı hangi şampiyona aittir?",
+                "answers":[
+                    "Malzahar"
+                    ,"Kayn"
+                    ,"Kindred"
+                    ,"Lissandra"
+                ],
+                "rightAnswer":1,
+                "pic":"assets/pics/questionMark.jpg"
+            },{
+                "question":"'DELİ BOZUK SÜVARİ' lakabı hangi şampiyona aittir?",
+                "answers":[
+                    "Hecarim"
+                    ,"Rumble"
+                    ,"Kled"
+                    ,"Sejuani"
+                ],
+                "rightAnswer":3,
+                "pic":"assets/pics/questionMark.jpg"
+            }
+        ],
+        [
+            {
+                "question":"'ÖDÜL AVCISI' lakabı hangi şampiyona aittir?",
+                "answers":[
+                    "Miss Fortune"
+                    ,"Master Yi"
+                    ,"Lucian"
+                    ,"Kled"
+                ],
+                "rightAnswer":1,
+                "pic":"assets/pics/questionMark.jpg"
+            },{
+                "question":"HEIMERDINGER hangi bölgedendir?",
+                "answers":[
+                    "BILGEWATER"
+                    ,"PILTOVER"
+                    ,"RUNETERRA"
+                    ,"BANDLE ŞEHRİ"
+                ],
+                "rightAnswer":2,
+                "pic":"assets/pics/heim.jpg"
+            },{
+                "question":"MISS FORTUNE hangi bölgedendir?",
+                "answers":[
+                    "PILTOVER"
+                    ,"RUNETERRA"
+                    ,"BILGEWATER"
+                    ,"BANDLE ŞEHRİ"
+                ],
+                "rightAnswer":3,
+                "pic":"assets/pics/mf.jpg"
+            },{
+                "question":"'Işığın Sesi' adlı yetenek hangi şampiyona aittir?",
+                "answers":[
+                    "Sona"
+                    ,"Lux"
+                    ,"Bard"
+                    ,"Aurelion Sol"
+                ],
+                "rightAnswer":4
+            },{
+                "question":"'Biçen Balta' adlı yetenek hangi şampiyona aittir?",
+                "answers":[
+                    "Darius"
+                    ,"Dr. Mundo"
+                    ,"Olaf"
+                    ,"Tryndamere"
+                ],
+                "rightAnswer":1
+            },{
+                "question":"'Zayıflara Acıma' adlı yetenek hangi şampiyona aittir?",
+                "answers":[
+                    "Thresh"
+                    ,"Syndra"
+                    ,"Urgot"
+                    ,"Warwick"
+                ],
+                "rightAnswer":2
+            },{
+                "question":"'Çelik Fırtına' adlı yetenek hangi şampiyona aittir?",
+                "answers":[
+                    "Master Yi"
+                    ,"Shen"
+                    ,"Yasuo"
+                    ,"Sejuani"
+                ],
+                "rightAnswer":3
+            },{
+                "question":"'Kırık Kanatlar' adlı yetenek hangi şampiyona aittir?",
+                "answers":[
+                    "Kayle"
+                    ,"Morgana"
+                    ,"Quinn"
+                    ,"Riven"
+                ],
+                "rightAnswer":4
+            },{
+                "question":"'Cızzt!' adlı yetenek hangi şampiyona aittir?",
+                "answers":[
+                    "Jinx"
+                    ,"Kennen"
+                    ,"Corki"
+                    ,"Fizz"
+                ],
+                "rightAnswer":1
+            },{
+                "question":"Hangi şampiyonun 'Vahşi Batılı' kostümü YOKTUR?",
+                "answers":[
+                    "Yasuo"
+                    ,"Miss Fortune"
+                    ,"Thresh"
+                    ,"Sejuani"
+                ],
+                "rightAnswer":2
+            }
+        ],
+        [
+            {
+                "question":"Hangi şampiyonun 'Yıldız Muhafızı' kostümü YOKTUR?",
+                "answers":[
+                    "Ahri"
+                    ,"Lulu"
+                    ,"Sona"
+                    ,"Janna"
+                ],
+                "rightAnswer":3
+            },{
+                "question":"Hangi şampiyonun 'Kanlı Ay' kostümü YOKTUR?",
+                "answers":[
+                    "Talon"
+                    ,"Shen"
+                    ,"Diana"
+                    ,"Kassadin"
+                ],
+                "rightAnswer":4
+            },{
+                "question":"Görseldeki yetenek hangi şampiyona aittir?",
+                "answers":[
+                    "Annie"
+                    ,"Lulu"
+                    ,"Nunu ve Willump"
+                    ,"Mordekaiser"
+                ],
+                "rightAnswer":1,
+                "pic":"assets/pics/tibbers.png"
+            },{
+                "question":"Görseldeki yetenek hangi şampiyona aittir?",
+                "answers":[
+                    "Hecarim"
+                    ,"Ekko"
+                    ,"Nidalee"
+                    ,"Pyke"
+                ],
+                "rightAnswer":2,
+                "pic":"assets/pics/zamanSicramasi.png"
+            },{
+                "question":"Görseldeki yetenek hangi şampiyona aittir?",
+                "answers":[
+                    "Vi"
+                    ,"Volibear"
+                    ,"Blitzcrank"
+                    ,"Malphite"
+                ],
+                "rightAnswer":3,
+                "pic":"assets/pics/gucYumrugu.png"
+            },{
+                "question":"Görseldeki yetenek hangi şampiyona aittir?",
+                "answers":[
+                    "Jhin"
+                    ,"Lucian"
+                    ,"Viktor"
+                    ,"Caitlyn"
+                ],
+                "rightAnswer":4,
+                "pic":"assets/pics/sonKoz.png"
+            }
+        ]
     ]
 }

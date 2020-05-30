@@ -5,7 +5,7 @@
         <div id="timerBar" #timerBarRef></div>
         <div id="timerBarBorder"></div>
       </div>
-      <span class="score badge badge-light font" *ngIf="score>=0">Score : {{score}}</span>
+      <span class="score badge badge-light font" *ngIf="score>=0">Score : {{score}} | Level : {{level+1}}</span>
       <span class="score badge badge-light font" *ngIf="score<0">READY!</span>
       <img id="pic" src="{{question.pic}}" *ngIf="question.pic">
       <p id="question" class="badge badge-light font">{{question.question}}</p>

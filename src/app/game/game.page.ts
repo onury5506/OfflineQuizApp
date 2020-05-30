@@ -24,6 +24,8 @@ export class GamePage implements OnInit {
   @ViewChild('main', {static: false}) mainDiv:ElementRef;
   timerLeft:number = 30;
   score:number=-1;
+  level:number=0;
+  allQuestions;
   questions;
   question
   lock:boolean = false;
@@ -39,8 +41,9 @@ export class GamePage implements OnInit {
     this.activatedRoute.queryParams.subscribe(
       params => {
         if(this.router.getCurrentNavigation().extras.state){
-          
-          this.questions = this.router.getCurrentNavigation().extras.state.questions
+          this.level=0;
+          this.allQuestions = this.router.getCurrentNavigation().extras.state.questions
+          this.questions = this.allQuestions[this.level]
           this.bg = this.router.getCurrentNavigation().extras.state.background;
           this.takeQuestion()
           this.timerLeft=30;
@@ -90,6 +93,12 @@ export class GamePage implements OnInit {
       this.question = this.questions[q]
       this.questions.splice(q,1)
       return true;
+    }else{
+      this.level++;
+      if(this.level < this.allQuestions.length){
+        this.questions = this.allQuestions[this.level]
+        return this.takeQuestion()
+      }
     }
     return false;
   }
